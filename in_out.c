@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "input_output.h"
+#include "in_out.h"
 
 /* Caption */
 
@@ -32,14 +32,14 @@ void data_from_file_uvx (FILE* out_uvx, data_uvx* s)
     fscanf (out_uvx,"%lf", &s->b);
     fscanf (out_uvx,"%lf", &s->t1);
     fscanf (out_uvx,"%lf", &s->t2);
-    fscanf (out_uvx,"%lf", &s->tk);
     fscanf (out_uvx,"%lf", &s->tn);
+    fscanf (out_uvx,"%lf", &s->tk);
 }
 
 void data_from_file_uvix (FILE* out_uvix, data_uvix* f)
 {
     fscanf (out_uvix,"%lf", &f->u0);
-    fscanf (out_uvix,"%lf", &f->uvx0);
+    f->uvx0 = 0.0;
     fscanf (out_uvix,"%lf", &f->u1);
     fscanf (out_uvix,"%lf", &f->uvx1);
     fscanf (out_uvix,"%lf", &f->u2);
@@ -65,7 +65,7 @@ void user_data_uvix (data_uvix *f)
 {
     printf ("\nUvix:\n");
     printf ("U0= "); scanf ("%lf", &f->u0);
-    printf ("Uvx0= "); scanf ("%lf", &f->uvx0);
+    printf ("Uvx0=0\n"); f->uvx0 = 0.0;
     printf ("U1= "); scanf ("%lf", &f->u1);
     printf ("Uvx1= "); scanf ("%lf", &f->uvx1);
     printf ("U2= "); scanf ("%lf", &f->u2);

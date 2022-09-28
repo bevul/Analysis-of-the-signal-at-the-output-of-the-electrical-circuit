@@ -73,18 +73,18 @@ int main()
             t_max_uvx=parameter(n, uvx, t);
             printf("\nMax Uvx time=%.2lf\n", t_max_uvx);
             double t_max_uvix=0;
-            t_max_uvix=parameter(n, uvx, t);
+            t_max_uvix=parameter(n, uvix, t);
             printf("Max Uvix time=%.2lf\n", t_max_uvix);
             break;
         }
         case 2:
         {
-            double p=1;
+            /*double p=1;
             double eps=0.024;
-            double par=10000000;
+            double par=10;
             parameter_with_accuracy_uvx(p, eps, par, n, s);
             parameter_with_accuracy_uvix(p, eps, par, n, s, f);
-            break;
+            break;*/
         }
         case 3:
         {
@@ -108,12 +108,12 @@ int main()
 
         case 5:
         {
-            system("C:\\maxima-5.39.0\\bin\\maxima -b uvx_max.txt");
+            system("C:\\maxima-5.46.0\\bin\\maxima -b uvx_max.txt");
             break;
         }
         case 6:
         {
-            system("C:\\maxima-5.39.0\\bin\\maxima -b uvix_max.txt");
+            system("C:\\maxima-5.46.0\\bin\\maxima -b uvix_max.txt");
             break;
         }
         default:

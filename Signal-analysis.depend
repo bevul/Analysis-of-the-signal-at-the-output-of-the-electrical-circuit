@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1664285269 source:c:\users\79818\desktop\signal analysis\signal-analysis\main.c
+1664326080 source:c:\users\79818\desktop\signal analysis\signal-analysis\main.c
 	<stdio.h>
 	<stdlib.h>
 	"calculations.h"
@@ -10,15 +10,15 @@
 
 1664284482 c:\users\79818\desktop\signal analysis\signal-analysis\input_output.h
 
-1664284766 source:c:\users\79818\desktop\signal analysis\signal-analysis\in_out.c
+1664321244 source:c:\users\79818\desktop\signal analysis\signal-analysis\in_out.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	"input_output.h"
+	"in_out.h"
 
-1664284730 c:\users\79818\desktop\signal analysis\signal-analysis\in_out.h
+1664318273 c:\users\79818\desktop\signal analysis\signal-analysis\in_out.h
 
-1664284516 source:c:\users\79818\desktop\signal analysis\signal-analysis\calculations.c
+1664323146 source:c:\users\79818\desktop\signal analysis\signal-analysis\calculations.c
 	<stdio.h>
 	<stdlib.h>
 	<math.h>

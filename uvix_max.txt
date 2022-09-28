@@ -1,0 +1,3 @@
+t:read_list("C:\\Users\\79818\\Desktop\\Signal analysis\\Signal-analysis\\t.txt"); 
+Uvix:read_list("C:\\Users\\79818\\Desktop\\Signal analysis\\Signal-analysis\\uvix.txt"); 
+plot2d([['discrete,t,Uvix]],[gnuplot_preamble,"set grid;"],[xlabel,"time"],[ylabel,"Uvix"])$

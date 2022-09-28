@@ -27,14 +27,19 @@ void form_uvix (int n, double*t, double*uvx, double* uvix, data_uvix f)//Form Uv
     int i;
     for (i=0; i<n; i++)
         if (uvx[i]<=f.uvx1)
-            uvix[i]=(uvx[i]-f.uvx0)*(f.u1-f.u0)/(f.uvx1 - f.uvx0) + f.u0;
-             else if (uvx[i]<f.uvx2) uvix[i]=(uvx[i]-f.uvx1)*(f.u2-f.u1)/(f.uvx2 - f.uvx1) + f.u1;
-                else uvix[i]=(uvx[i]-f.uvx2)*(f.u3-f.u2)/(f.uvx3 - f.uvx2) + f.u2;
+            uvix[i]=0.5+uvx[i]+5;
+                else if (f.uvx2<uvx[i]) uvix[i]=13/6*(uvx[i]-10)+10;
+                    else uvix[i]=0.25*(uvx[i]-40)+75;
+
+
+            //uvix[i]=(uvx[i]-f.uvx0)*(f.u1-f.u0)/(f.uvx1 - f.uvx0) + f.u0;
+             //else if (uvx[i]<f.uvx2) uvix[i]=(uvx[i]-f.uvx1)*(f.u2-f.u1)/(f.uvx2 - f.uvx1) + f.u1;
+                //else uvix[i]=(uvx[i]-f.uvx2)*(f.u3-f.u2)/(f.uvx3 - f.uvx2) + f.u2;
 }
 
 /* Calculation of the parameter */
 
-double parameter  (int n, double* arr, double* t)
+double max_u (int n, double* arr)
 {
     double max_arr=arr[0];
     int i;
@@ -43,7 +48,13 @@ double parameter  (int n, double* arr, double* t)
             {
                 max_arr=arr[i];
             }
+    return max_arr;
+}
+double parameter  (int n, double* arr, double* t)
+{
+    double max_arr=max_u(n, arr);
 
+    int i;
     int st_t=0, end_t=0;
     for(i=0;i<n;i++)
         if (arr[i]==max_arr)
@@ -64,7 +75,9 @@ double parameter  (int n, double* arr, double* t)
 }
 
 /* Calculation of the parameter with uncertainty of measurement */
+//Something wrong with calculation. Should be revisited later. (((
 
+/*
 void parameter_with_accuracy_uvx (double p, double eps, double par, int n, data_uvx s)
 {
     printf("Uvx:\n");
@@ -102,3 +115,4 @@ void parameter_with_accuracy_uvix (double p, double eps, double par, int n, data
         n=2*n;
     }
 }
+*/
